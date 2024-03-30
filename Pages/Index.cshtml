@@ -1,0 +1,27 @@
+﻿@page
+@using firstCRUD.Model
+@model firstCRUD.Pages.IndexModel
+
+<h5>You Can See All BUGS below. All UnDone count is : @Model.UnDoneCount </h5>
+
+<table class="table table-striped" style="font-size:medium">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">IsDone?</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var bug in Model.Bugs)
+    {
+        <tr>
+            <td>@bug.Id</td>
+            <td>@bug.Name</td>
+            <td>@bug.Description</td>
+            <td>@bug.IsDone</td>
+        </tr>
+    }
+    </tbody>
+</table>
